@@ -4,5 +4,7 @@ student['state'] = 'Texas'
 student['age'] += 1
 for key in student:
      ukey = f'{key.title()}'
-     print(f'{ukey}:', student[key])
- 
+     if ukey == 'Hobbies':
+          print(f'{ukey}: {student[key][0]}, {student[key][1]}, and {student[key][2]}')
+     else:          
+          print(f'{ukey}: {student[key]}')
