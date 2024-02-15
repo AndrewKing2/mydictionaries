@@ -207,3 +207,17 @@ ProduceDictionary={
     }
 }
 
+#for key in ProduceDictionary:
+    #if ProduceDictionary[key]['cost']*ProduceDictionary[key]['amt_sold'] != ProduceDictionary[key]['total']:
+        #print(ProduceDictionary[key],f'${ProduceDictionary[key]['cost']*ProduceDictionary[key]['amt_sold']:.2f}',ProduceDictionary[key]['total'])
+
+for k,v in ProduceDictionary.items():
+    cost = v['cost']
+    amt_sold = v['amt_sold']
+    total = v['total']
+    calc = round(cost*amt_sold,2)
+    if calc != total:
+        print(f"Produce Name: {k}")
+        print(f"Calculated Total: ${calc:.2f}")
+        print(f"Stated Total: ${total:.2f}")
+        print()
